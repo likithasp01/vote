@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            justify-items: center;
+            background-color: rgb(198, 173, 207);
+        }
+        .box{
+            border: 2px solid;
+            width: 200px;
+            padding: 30px;
+            align-items: center;
+            background-color: rgb(213, 130, 243);
+            border-radius: 30px;
+            box-shadow: 0px 30px 20px rgba(0,0,0,0.2);
+            transition: 0.4s;
+            animation: fadeln 1s ease-in;
+        }
+        
+        #age, #btn{
+            background-color: rgb(235, 255, 137);
+            padding: 8px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 2px 2px;
+        }
+        #btn:hover{
+            transform: scale(1.07);
+            background-color: rgb(120, 182, 149);
+        }
+        h2,h3{
+            color: rgb(6, 45, 54);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <h2>Vote Eligiblity</h2>
+    <input type="text" id="age" placeholder="Enter your Age">
+    <br><br>
+    <button id="btn" onclick="checkvote()">Click</button>
+    <h3 id="result"></h3>
+    </div>
+    <script>
+        function checkvote(){
+            let age=document.getElementById("age").value;    //value==user input
+            age=Number(age);  //convert string to number.
+
+            if(age===0){
+                document.getElementById("result").innerHTML="Please enter your age";
+            }else if(age>=18){
+                document.getElementById("result").innerHTML="You are Eligible to Vote";
+            }else{
+                document.getElementById("result").innerHTML="You are not Eligible to Vote";
+            }
+        }
+    </script>
+</body>
+</html>
